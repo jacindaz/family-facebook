@@ -5,8 +5,11 @@ Personal project to create a private family chatting, messaging, photo-sharing a
 ### To Do List:
 
 * Posts
+* User authentication
+** Devise
+** Omniauth
 * Custom feeds: user can create feeds based on different filters
-* Photos
+* Photos (use paperclip or carrierwave)
 ** photo albums
 ** photo tagging
 * File-uploading and sharing
