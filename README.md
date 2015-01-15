@@ -1,8 +1,8 @@
-== Family Facebook
+## Family Facebook
 
 Personal project to create a private family chatting, messaging, photo-sharing application.
 
-=== To Do List:
+### To Do List:
 
 * Posts
 * Custom feeds: user can create feeds based on different filters
@@ -11,6 +11,6 @@ Personal project to create a private family chatting, messaging, photo-sharing a
 ** photo tagging
 * File-uploading and sharing
 
-=== ERD (will continue to be updated)
+### ERD (will continue to be updated)
 
 ![entity-relationship diagram](family-facebook.png)
