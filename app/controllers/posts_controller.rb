@@ -1,13 +1,19 @@
 class PostsController < ApplicationController
 
+  def index
+    render :'users/index'    
+  end
+
   def create
-    binding.pry
     @post = Post.new(post_params)
     @post.user = current_user
+    @all_posts = Post.all
+
+    binding.pry
 
     if @post.save
       flash[:notice] = 'Post saved!'
-      redirect_to root_path
+      redirect_to users_path
     else
       flash[:notice] = 'Post not saved'
       render :'users/index'

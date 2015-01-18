@@ -46,4 +46,5 @@ group :development, :test do
   gem 'method_source'
   gem 'pry-nav'
   gem 'better_errors'
+  gem 'binding_of_caller'
 end

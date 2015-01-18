@@ -1,0 +1,12 @@
+.errors-colors {
+  color: red;
+  font-weight: 800;
+}
+
+.errors-div {
+  border: 1px solid red;
+  width: 40%;
+  padding: 2% 0 2% 2%;
+  margin-bottom: 40px;
+  border-radius: 10px;
+}
