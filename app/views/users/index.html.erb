@@ -1,0 +1,37 @@
+<h2>All Posts</h2>
+<ul>
+  <% @all_posts.each do |post| %>
+    <li><%= post.title %>: <%= post.body %></li>
+  <% end %>
+</ul>
+
+<br>
+<hr>
+<br>
+
+<h2>Post your status!</h2>
+<br>
+
+<% if user_signed_in? %>
+
+  <% if @post.errors.messages.present? %>
+    <p>I'm sorry, your post couldn't be saved because:</p>
+    <ul>
+      <% @post.errors.messages.each do |error| %>
+        <li><%= error %></li>
+      <% end %>
+    </ul>
+  <% end %>
+
+  <%= form_for([@user, @post]) do |f| %>
+    <h4><%= f.label :title %></h4>
+    <%= f.text_field :title %><br>
+
+    <h4><%= f.label :body %></h4>
+    <%= f.text_area :body %><br>
+
+    <%= f.button :submit %>
+  <% end %>
+<% else %>
+  <p>Sign in to post a status update!</p>
+<% end %>
