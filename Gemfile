@@ -51,5 +51,5 @@ group :development, :test do
   # testing gems
   gem 'rspec-rails'
   gem 'capybara'
-  gem 'factory_girl'
+  gem 'factory_girl_rails'
 end
