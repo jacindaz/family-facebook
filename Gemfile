@@ -47,4 +47,9 @@ group :development, :test do
   gem 'pry-nav'
   gem 'better_errors'
   gem 'binding_of_caller'
+
+  # testing gems
+  gem 'rspec-rails'
+  gem 'capybara'
+  gem 'factory_girl_rails'
 end
