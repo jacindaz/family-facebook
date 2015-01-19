@@ -1,7 +1,12 @@
 class PostsController < ApplicationController
 
   def index
-    render :'users/index'    
+    render :'users/index'
+  end
+
+  def new
+    @post = Post.new
+    @user = current_user
   end
 
   def create
@@ -9,14 +14,19 @@ class PostsController < ApplicationController
     @post.user = current_user
     @all_posts = Post.all
 
-    binding.pry
+    respond_to do |format|
+      @post.save!
+      format.html { redirect_to users_path }
+      format.js
+    end
 
-    if @post.save
-      flash[:notice] = 'Post saved!'
-      redirect_to users_path
-    else
-      flash[:notice] = 'Post not saved'
-      render :'users/index'
+  end
+
+  def destroy
+    @post = Post.destroy(params[:id])
+    respond_to do |format|
+      format.html { redirect_to users_path }
+      format.js
     end
   end
 

@@ -27,4 +27,11 @@ describe Post do
     expect(post.errors[:body]).to include("must have at least 5 words.")
   end
 
+  it "is able to delete a post" do
+    user = FactoryGirl.create(:user)
+    post = FactoryGirl.create(:post, user: user)
+
+    expect { post.destroy }.to change(Post, :count).from(1).to(0)
+  end
+
 end
