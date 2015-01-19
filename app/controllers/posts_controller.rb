@@ -1,7 +1,7 @@
 class PostsController < ApplicationController
 
   def index
-    render :'users/index'    
+    render :'users/index'
   end
 
   def create
@@ -18,6 +18,12 @@ class PostsController < ApplicationController
       flash[:notice] = 'Post not saved'
       render :'users/index'
     end
+  end
+
+  def destroy
+    @post = Post.find(params[:id])
+    @post.destroy
+    redirect_to users_path
   end
 
   private

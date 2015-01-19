@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   devise_for :users
 
   resources :users do
-    resources :posts, only: [:create]
+    resources :posts, only: [:create, :destroy]
   end
 
   resources :posts, only: [:index]
