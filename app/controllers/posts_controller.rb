@@ -15,6 +15,7 @@ class PostsController < ApplicationController
     @all_posts = Post.all
 
     respond_to do |format|
+      @post.save!
       format.html { redirect_to users_path }
       format.js
     end
@@ -22,9 +23,11 @@ class PostsController < ApplicationController
   end
 
   def destroy
-    @post = Post.find(params[:id])
-    @post.destroy
-    redirect_to users_path
+    @post = Post.destroy(params[:id])
+    respond_to do |format|
+      format.html { redirect_to users_path }
+      format.js
+    end
   end
 
   private
