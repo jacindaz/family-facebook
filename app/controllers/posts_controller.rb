@@ -4,6 +4,11 @@ class PostsController < ApplicationController
     render :'users/index'
   end
 
+  def new
+    @post = Post.new
+    @user = current_user
+  end
+
   def create
     @post = Post.new(post_params)
     @post.user = current_user

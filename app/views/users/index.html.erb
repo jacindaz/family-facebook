@@ -23,31 +23,9 @@
   <br>
   <hr>
 
-  <h2>Post your status!</h2>
-  <br>
-
-  <%= form_for([@user, @post]) do |f| %>
-    <% if @post.errors.any? %>
-      <div class="errors-div">
-        <h4 class="errors-colors">
-          I'm sorry, your post couldn't be saved because:
-        </h4>
-        <ul>
-          <% @post.errors.messages.each do |field, error| %>
-            <li class="errors-colors"><%= "#{field.to_s.capitalize} #{error[0]}" %></li>
-          <% end %>
-        </ul>
-      </div>
-    <% end %>
-
-    <h4><%= f.label :title %></h4>
-    <%= f.text_field :title, cols: 50 %><br>
-
-    <h4><%= f.label :body %></h4>
-    <%= f.text_area :body, cols: 50, rows: 5 %><br>
-
-    <%= f.submit 'Post' %>
-  <% end %>
+  <h2>
+    <%= link_to "New Post", new_user_post_path(current_user), id: "new_post", remote: true %>
+  </h2>
 
 <!--If user is not signed in-->
 <% else %>
