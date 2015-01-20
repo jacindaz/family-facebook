@@ -17,3 +17,5 @@ Personal project to create a private family chatting, messaging, photo-sharing a
 ### ERD (will continue to be updated)
 
 ![entity-relationship diagram](family-facebook.png)
+
+[![Code Climate](https://codeclimate.com/github/jacindaz/family-facebook/badges/gpa.svg)](https://codeclimate.com/github/jacindaz/family-facebook)
