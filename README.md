@@ -18,7 +18,8 @@ Personal project to create a private family chatting, messaging, photo-sharing a
 
 ####Technical Features:
 * Continuous Integration with tests (upon commit, runs all tests)
-* 
+* Switch from ERB to HAML
+* jQuery 
 
 ### ERD (will continue to be updated)
 
