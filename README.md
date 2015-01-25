@@ -17,7 +17,9 @@ Personal project to create a private family chatting, messaging, photo-sharing a
 * 
 
 ####Technical Features:
-* Continuous Integration with tests (upon commit, runs all tests)
+* Continuous Integration
+* * upon commit, runs all tests
+* * if all tests pass, deploy to Heroku
 * Switch from ERB to HAML
 * jQuery 
 
