@@ -4,6 +4,7 @@ Personal project to create a private family chatting, messaging, photo-sharing a
 
 ### To Do List:
 
+####Features:
 * Posts
 * User authentication
 ** Devise
@@ -13,6 +14,11 @@ Personal project to create a private family chatting, messaging, photo-sharing a
 ** photo albums
 ** photo tagging
 * File-uploading and sharing
+* 
+
+####Technical Features:
+* Continuous Integration with tests (upon commit, runs all tests)
+* 
 
 ### ERD (will continue to be updated)
 
