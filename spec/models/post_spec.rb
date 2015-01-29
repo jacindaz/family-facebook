@@ -34,4 +34,7 @@ describe Post do
     expect { post.destroy }.to change(Post, :count).from(1).to(0)
   end
 
+  it "is able to save an image" do 
+  end
+
 end
