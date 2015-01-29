@@ -23,10 +23,11 @@ class PostsController < ApplicationController
   end
 
   def destroy
+    @post = Post.find(params[:id])
     @post.photo = nil
     @post.save
     
-    @post = Post.destroy(params[:id])
+    @post.destroy
     respond_to do |format|
       format.html { redirect_to users_path }
       format.js
