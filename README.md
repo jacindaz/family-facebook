@@ -20,6 +20,7 @@ Personal project to create a private family chatting, messaging, photo-sharing a
 * Continuous Integration with tests (upon commit, runs all tests)
 * Switch from ERB to HAML
 * jQuery 
+* Add appropriate indexes to Posts table
 
 ### ERD (will continue to be updated)
 
