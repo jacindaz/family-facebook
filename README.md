@@ -14,8 +14,9 @@ Personal project to create a private family chatting, messaging, photo-sharing a
     * photo albums
     * photo tagging
     * cropping photos (http://andowebsit.es/blog/noteslog.com/post/how-to-allow-users-to-crop-images-in-rails-4/)
+    * testing (http://andowebsit.es/blog/noteslog.com/post/how-to-test-paperclip-uploads-in-rails4/)
 * File-uploading and sharing
-* 
+
 
 ####Technical Features:
 * Continuous Integration
