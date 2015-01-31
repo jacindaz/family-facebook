@@ -1,8 +1,7 @@
 <div id="post-form">
   <h2>Post your Status!</h2>
 
-  <%= form_for [@user, @post], remote: true, 
-  { validate: true} do |f| %>
+  <%= form_for([@user, @post], remote: true) do |f| %>
     <% if @post.errors.any? %>
       <div class="errors-div">
         <h4 class="errors-colors">
