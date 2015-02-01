@@ -1,5 +1,5 @@
 <div id="post-form">
-  <h2>Post your Status!</h2>
+  Post your Status!
 
   <%= form_for([@user, @post], url: user_posts_path(@user), html: { multipart: true }, authenticity_token: true, remote: true) do |f| %>
     <% if @post.errors.any? %>
@@ -15,16 +15,22 @@
       </div>
     <% end %>
 
-    <p><%= f.label :title %></p>
-    <%= f.text_field :title, cols: 50 %><br>
+    <div class="form-group" id="posts-outer">
+      <div class="post-form margin_small_bottom">
+        <%= f.text_field :title, cols: 50, placeholder: 'Title', class: "form-control" %>
+      </div>
 
-    <p><%= f.label :body %></p>
-    <%= f.text_area :body, cols: 50, rows: 5 %><br>
+      <div id="body-errors" class="post-form">
+        <%= f.text_area :body, id: 'post_body', cols: 20, rows: 3, class: "form-control", placeholder: 'Body' %>
+      </div>
 
-    <p>Upload an Image</p>
-    <%= f.file_field :photo %><br>
+      <div class="post-form">
+        <%= f.file_field :photo %><br>
+      </div>
 
-    <%= f.submit 'Post' %>
+      <%= f.submit 'Post', class: "btn btn-default", id: "post-submit-button" %>
+    </div>
+
   <% end %>
 
 </div>
