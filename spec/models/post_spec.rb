@@ -28,10 +28,13 @@ describe Post do
   end
 
   it "is able to delete a post" do
-    user = FactoryGirl.create(:user)
     post = FactoryGirl.create(:post, user: user)
 
     expect { post.destroy }.to change(Post, :count).from(1).to(0)
+  end
+
+  it "is able to save an image" do 
+    picture = File.new(File.join(Rails.root, "spec/fixtures/paperclip", "happy-face.jpg"), 'rb')
   end
 
 end

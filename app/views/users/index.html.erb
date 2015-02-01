@@ -12,6 +12,7 @@
             </h3>
           </div>
           <div class="panel-body">
+            <%= image_tag post.photo.url(:thumb) %>
             <%= post.body %>
             <span style="float: right;"><%= link_to "Delete", [post.user, post], method: :delete, class: 'btn btn-default', remote: true %></span>
           </div>
