@@ -1,1 +1,9 @@
 $('#new_post').hide().after('<%= j render("form") %>');
+post_body = $("#post_body")
+post_body.on('focusout', function() {
+    // debugger
+    body_text_count = this.value.split(' ').length
+    if(body_text_count > 200) {
+        $("#body-errors").append('<span id="body-errors" class="errors-colors">Posts must be less than 200 words.</span>')
+    }
+})
