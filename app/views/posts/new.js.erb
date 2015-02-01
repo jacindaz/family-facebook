@@ -1,9 +1,32 @@
 $('#new_post').hide().after('<%= j render("form") %>');
-post_body = $("#post_body")
-post_body.on('focusout', function() {
-    // debugger
+
+
+$("#post_body").on('focusout', function() {
     body_text_count = this.value.split(' ').length
-    if(body_text_count > 200) {
-        $("#body-errors").append('<span id="body-errors" class="errors-colors">Posts must be less than 200 words.</span>')
+
+    if((body_text_count > 200) && ($(".errors-client-side").length === 0)) {
+        $("#body-errors").prepend('<div id="body-errors" class="errors-colors errors-client-side">Posts must be less than 200 words.</div>')
+        $("#body-errors").addClass('has-error has-feedback')
     }
 })
+
+$("#post-submit-button").on('click', function() {
+    body_text_count = this.value.split(' ').length
+    if((body_text_count > 200) && ($(".errors-client-side").length === 0)) {
+        $("#body-errors").prepend('<div id="body-errors" class="errors-colors errors-client-side">Posts must be less than 200 words.</div>')
+        $("#body-errors").addClass('has-error has-feedback')
+    }
+})
+
+// $('#new_post').hide().after('<%= j render("form") %>');
+// $("#post_body").on('focusout', postBodyValidation(this))
+// $("#post-submit-button").on('click', postBodyValidation(this))
+
+
+// var postBodyValidation = function(this) {
+//     body_text_count = this.value.split(' ').length
+//     if(body_text_count > 200) {
+//         $("#body-errors").append('<div id="body-errors" class="errors-colors">Posts must be less than 200 words.</div>')
+//         $("#body-errors").addClass('has-error has-feedback')
+//     }
+// }

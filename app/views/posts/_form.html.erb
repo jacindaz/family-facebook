@@ -1,5 +1,5 @@
 <div id="post-form">
-  <h2>Post your Status!</h2>
+  Post your Status!
 
   <%= form_for([@user, @post], remote: true) do |f| %>
     <% if @post.errors.any? %>
@@ -15,13 +15,19 @@
       </div>
     <% end %>
 
-    <h4><%= f.label :title %></h4>
-    <%= f.text_field :title, cols: 50 %><br>
+    <div class="form-group" id="posts-outer">
 
-    <h4 id="body-errors"><%= f.label :body %></h4>
-    <%= f.text_area :body, id: 'post_body', cols: 50, rows: 5, placeholder: 'Must be less than 200 words' %><br>
+      <div class="post-form margin_small_bottom">
+        <%= f.text_field :title, cols: 50, placeholder: 'Title', class: "form-control" %>
+      </div>
 
-    <%= f.submit 'Post' %>
+      <div id="body-errors" class="post-form">
+        <%= f.text_area :body, id: 'post_body', cols: 20, rows: 3, class: "form-control", placeholder: 'Body' %>
+      </div>
+
+    </div>
+
+    <h4><%= f.submit 'Post', class: "btn btn-default", id: "post-submit-button" %></h4>
   <% end %>
 
 </div>
