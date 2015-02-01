@@ -15,15 +15,19 @@
       </div>
     <% end %>
 
-    <br>
-    <%= f.text_field :title, cols: 50, placeholder: 'Title' %>
-    <br><br>
+    <div class="form-group">
 
-    <p id="body-errors">
-      <%= f.text_area :body, id: 'post_body', cols: 20, rows: 3, class: ".input-sm", placeholder: 'Body' %>
-    </p>
+      <div class="post-form">
+        <%= f.text_field :title, cols: 50, placeholder: 'Title', class: "form-control" %>
+      </div>
 
-    <h4><%= f.submit 'Post' %></h4>
+      <div id="body-errors" class="post-form">
+        <%= f.text_area :body, id: 'post_body', cols: 20, rows: 3, class: "form-control", placeholder: 'Body' %>
+      </div>
+
+    </div>
+
+    <h4><%= f.submit 'Post', class: "btn btn-default", id: "post-submit-button" %></h4>
   <% end %>
 
 </div>
