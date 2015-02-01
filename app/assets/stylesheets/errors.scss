@@ -1,0 +1,35 @@
+$errors-font-color: red;
+
+.errors-colors {
+  color: $errors-font-color;
+  font-weight: 800;
+  font-size: 16px;
+}
+
+.errors-div {
+  border: 1px solid $errors-font-color;
+  width: 40%;
+  padding: 2% 0 2% 2%;
+  margin-bottom: 40px;
+  border-radius: 10px;
+}
+
+.errors-client-side {
+  border: 1px solid $errors-font-color;
+  width: 100%;
+  padding: 2% 0 2% 2%;
+  margin-bottom: 10px;
+  margin-top: 10px;
+  border-radius: 10px;
+}
+
+// .errors {
+//   border: 1px solid $errors-font-color;
+//   border-radius: 10px;
+//   padding: 2% 0 2% 2%;
+//   &.-client-side {
+//     width: 100%;
+//     margin-bottom: 10px;
+//     margin-top: 10px;
+//   }
+// }
