@@ -24,6 +24,7 @@ Personal project to create a private family chatting, messaging, photo-sharing a
    * if all tests pass, deploy to Heroku
 * Switch from ERB to HAML
 * jQuery 
+* Add appropriate indexes to Posts table
 
 ### ERD (will continue to be updated)
 

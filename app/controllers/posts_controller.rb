@@ -11,7 +11,7 @@ class PostsController < ApplicationController
 
   def create
     @post = Post.new(post_params)
-    @post.user = current_user
+    @post.user = User.find(params[:user_id])
     @all_posts = Post.all
 
     respond_to do |format|
@@ -23,7 +23,11 @@ class PostsController < ApplicationController
   end
 
   def destroy
-    @post = Post.destroy(params[:id])
+    @post = Post.find(params[:id])
+    @post.photo = nil
+    @post.save
+    
+    @post.destroy
     respond_to do |format|
       format.html { redirect_to users_path }
       format.js
@@ -33,7 +37,7 @@ class PostsController < ApplicationController
   private
 
   def post_params
-    params.require(:post).permit(:title, :body)
+    params.require(:post).permit(:title, :body, :photo)
   end
 
 end

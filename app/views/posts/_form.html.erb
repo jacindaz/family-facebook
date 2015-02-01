@@ -1,11 +1,11 @@
 <div id="post-form">
   Post your Status!
 
-  <%= form_for([@user, @post], remote: true) do |f| %>
+  <%= form_for([@user, @post], url: user_posts_path(@user), html: { multipart: true }, authenticity_token: true, remote: true) do |f| %>
     <% if @post.errors.any? %>
       <div class="errors-div">
         <h4 class="errors-colors">
-          I'm sorry, your post couldn't be saved because:
+          Your post couldn't be saved because:
         </h4>
         <ul>
           <% @post.errors.messages.each do |field, error| %>
@@ -16,7 +16,6 @@
     <% end %>
 
     <div class="form-group" id="posts-outer">
-
       <div class="post-form margin_small_bottom">
         <%= f.text_field :title, cols: 50, placeholder: 'Title', class: "form-control" %>
       </div>
@@ -25,9 +24,13 @@
         <%= f.text_area :body, id: 'post_body', cols: 20, rows: 3, class: "form-control", placeholder: 'Body' %>
       </div>
 
+      <div class="post-form">
+        <%= f.file_field :photo %><br>
+      </div>
+
+      <%= f.submit 'Post', class: "btn btn-default", id: "post-submit-button" %>
     </div>
 
-    <h4><%= f.submit 'Post', class: "btn btn-default", id: "post-submit-button" %></h4>
   <% end %>
 
 </div>

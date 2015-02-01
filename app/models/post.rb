@@ -10,4 +10,7 @@ class Post < ActiveRecord::Base
   validates :user_id, presence: true, numericality: { only_integer: true }
 
   belongs_to :user
+
+  has_attached_file :photo, :styles => { :medium => "300x300>", :thumb => "100x100>" }, :default_url => "/images/:style/missing.png"
+  validates_attachment :photo, content_type: { content_type: /\Aimage\/.*\Z/ }, size: { in: 0..5.megabytes }
 end
