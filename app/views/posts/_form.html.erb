@@ -3,7 +3,7 @@
 
   <%= form_for([@user, @post], url: user_posts_path(@user), html: { multipart: true }, authenticity_token: true, remote: true) do |f| %>
     <% if @post.errors.any? %>
-      <div class="errors-div">
+      <div class="errors errors-server-side">
         <h4 class="errors-colors">
           Your post couldn't be saved because:
         </h4>
